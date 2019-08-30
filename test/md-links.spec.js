@@ -2,13 +2,13 @@
 const mdLinks = require('../');
 
 
-describe('mdLinks', () => {
+describe('mdLinks.chekingIfPathHasMdFiles', () => {
 
   it('should return true for a valid .md file', () => {
-    expect(mdLinks('../README.md')).toBe(true);
+    expect(mdLinks.chekingIfPathHasMdFiles('./README.md')).toBe(true);
   });
 
   it('should return false for an invalid file', () => {
-    expect(mdLinks('../index.js')).toBe(false);
+    expect(mdLiks.chekingIfPathHasMdFiles('../index.js')).toBe(false);
   });
 });

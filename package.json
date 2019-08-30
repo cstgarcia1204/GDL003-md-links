@@ -4,7 +4,8 @@
   "dependencies": {
     "cheerio": "^1.0.0-rc.3",
     "fetch": "^1.1.0",
-    "marked": "^0.7.0"
+    "marked": "^0.7.0",
+    "node-fetch": "^2.6.0"
   },
   "devDependencies": {
     "cheerio": "^1.0.0-rc.3",

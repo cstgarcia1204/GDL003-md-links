@@ -13,6 +13,7 @@ let inputTesting='./README.md';
 //----5 Funcion que validará los links
 const linksValidation =(urlArray)=>{
   let cont=0;
+  let contError=0;
   urlArray.forEach((element,i) => {
  
     fetch(urlArray[i])
@@ -21,14 +22,16 @@ const linksValidation =(urlArray)=>{
         return console.log
         ('Respuesta OK: ',response.ok,'| Status: ',response.status,'| StatusText: ', response.statusText,'| ',urlArray[i]);
       }).then((response)=>{
-        console.log(cont);
+        console.log('No. de Links Funcionando: ',cont);
       })
       .catch(function(err) {
+        contError+=1;
+        
         console.log('--->Error, Broken Link!!!', err.message);
+        console.log('No. links rotos: ', contError);
         //return console.error(err);
       });
   });
-  console.log(cont);
 }// 5 termina la funcion que valida los links
 
 //----4 Funcion que filtrara los elementos <a> y arrojara los links

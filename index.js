@@ -21,7 +21,7 @@ const linksValidation =(urlArray)=>{
         cont+=1;
         return console.log
         ('Respuesta OK: ',response.ok,'| Status: ',response.status,'| StatusText: ', response.statusText,'| ',urlArray[i]);
-      }).then((response)=>{
+      }).then(()=>{
         console.log('No. de Links Funcionando: ',cont);
       })
       .catch(function(err) {

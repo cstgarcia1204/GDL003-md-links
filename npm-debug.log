@@ -1,0 +1,101 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node', '/usr/bin/npm', 'publish' ]
+2 info using npm@3.5.2
+3 info using node@v8.10.0
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec Result {
+7 silly cache add   raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: '/home/laboratoria-190/Escritorio/LaboratoriaW/GDL003-md-links',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory /home/laboratoria-190/.npm/md-links/0.1.1/package.tgz not in flight; packing
+9 info lifecycle md-links@0.1.1~prepublish: md-links@0.1.1
+10 silly lifecycle md-links@0.1.1~prepublish: no script for prepublish, continuing
+11 verbose tar pack [ '/home/laboratoria-190/.npm/md-links/0.1.1/package.tgz',
+11 verbose tar pack   '/home/laboratoria-190/Escritorio/LaboratoriaW/GDL003-md-links' ]
+12 verbose tarball /home/laboratoria-190/.npm/md-links/0.1.1/package.tgz
+13 verbose folder /home/laboratoria-190/Escritorio/LaboratoriaW/GDL003-md-links
+14 verbose addLocalTarball adding from inside cache /home/laboratoria-190/.npm/md-links/0.1.1/package.tgz
+15 silly cache afterAdd md-links@0.1.1
+16 verbose afterAdd /home/laboratoria-190/.npm/md-links/0.1.1/package/package.json not in flight; writing
+17 verbose afterAdd /home/laboratoria-190/.npm/md-links/0.1.1/package/package.json written
+18 silly publish { name: 'md-links',
+18 silly publish   version: '0.1.1',
+18 silly publish   dependencies:
+18 silly publish    { cheerio: '^1.0.0-rc.3',
+18 silly publish      fetch: '^1.1.0',
+18 silly publish      marked: '^0.7.0',
+18 silly publish      'node-fetch': '^2.6.0' },
+18 silly publish   devDependencies: { cheerio: '^1.0.0-rc.3', marked: '^0.7.0' },
+18 silly publish   description: '## Preámbulo',
+18 silly publish   main: 'index.js',
+18 silly publish   directories: { test: 'test' },
+18 silly publish   scripts: { test: 'echo "Error: no test specified" && exit 1' },
+18 silly publish   repository:
+18 silly publish    { type: 'git',
+18 silly publish      url: 'git+https://github.com/cstgarcia1204/GDL003-md-links.git' },
+18 silly publish   keywords: [ 'md-to-link' ],
+18 silly publish   author: { name: 'ckstg' },
+18 silly publish   license: 'ISC',
+18 silly publish   bugs:
+18 silly publish    { url: 'https://github.com/cstgarcia1204/GDL003-md-links/issues' },
+18 silly publish   homepage: 'https://github.com/cstgarcia1204/GDL003-md-links#readme',
+18 silly publish   readme: '# Markdown Links\n\n## Preámbulo\n\n[Markdown](https://es.wikipedia.org/wiki/Markdown) es un lenguaje de marcado\nligero muy popular entre developers. Es usado en muchísimas plataformas que\nmanejan texto plano (GitHub, foros, blogs, ...), y es muy común\nencontrar varios archivos en ese formato en cualquier tipo de repositorio\n(empezando por el tradicional `README.md`).\n\nEstos archivos `Markdown` normalmente contienen _links_ (vínculos/ligas) que\nmuchas veces están rotos o ya no son válidos y eso perjudica mucho el valor de\nla información que se quiere compartir.\n\nDentro de una comunidad de código abierto, nos han propuesto crear una\nherramienta usando [Node.js](https://nodejs.org/), que lea y analice archivos\nen formato `Markdown`, para verificar los links que contengan y reportar\nalgunas estadísticas.\n\n![md-links](https://user-images.githubusercontent.com/110297/42118443-b7a5f1f0-7bc8-11e8-96ad-9cc5593715a6.jpg)\n\n## Introducción\n\n[Node.js](https://nodejs.org/es/) es un entorno de ejecución para JavaScript\nconstruido con el [motor de JavaScript V8 de Chrome](https://developers.google.com/v8/).\nEsto nos va a permitir ejecutar JavaScript en el entorno del sistema operativo,\nya sea tu máquina o un servidor, lo cual nos abre las puertas para poder\ninteractuar con el sistema en sí, archivos, redes, ...\n\nEn este proyecto nos alejamos un poco del navegador para construir un programa\nque se ejecute usando Node.js, donde aprenderemos sobre cómo interactuar con el\nsistema archivos, con el entorno (_process_, _env_, _stdin/stdout/stderr_), ...\n\n## Objetivos\n\nEl objetivo práctico de este proyecto es que aprendas cómo crear tu propia\n**librería** (o biblioteca - _library_) en JavaScript.\n\nDiseñar tu propia librería es una experiencia fundamental para cualquier\ndesarrollador porque que te obliga a pensar en la interfaz (API) de tus\n_módulos_ y cómo será usado por otros developers. Debes tener especial\nconsideración en peculiaridades del lenguaje, convenciones y buenas prácticas.\n\nTópicos:\n\n- [Node.js](https://nodejs.org/en/).\n- [módulos (CommonJS)](https://nodejs.org/docs/latest-v0.10.x/api/modules.html).\n- [file system](https://nodejs.org/api/fs.html).\n- [path](https://nodejs.org/api/path.html).\n- [http.get](https://nodejs.org/api/http.html#http_http_get_options_callback).\n- [Parsing](https://en.wikipedia.org/wiki/Parsing).\n- [markdown](https://daringfireball.net/projects/markdown/syntax).\n- [CLI](https://www.proyectobyte.com/windows/simbolo-del-sistema/uso-la-interfaz-linea-comandos).\n- [npm-scripts](https://docs.npmjs.com/misc/scripts).\n- [semver](https://semver.org/).\n\n## Consideraciones generales\n\nEste proyecto se debe "resolver" de manera individual.\n\nLa librería debe estar implementada en JavaScript para ser ejecutada con\nNode.js. **Está permitido usar librerías externas**.\n\n## Parte obligatoria\n\nTu módulo debe ser instalable via `npm install <github-user>/md-links`. Este\nmódulo debe incluir tanto un _ejecutable_ que podamos invocar en la línea de\ncomando como una interfaz que podamos importar con `require` para usarlo\nprogramáticamente.\n\nLos tests unitarios deben cubrir un mínimo del 70% de _statements_, _functions_,\n_lines_ y _branches_. Te recomendamos explorar [Jest](https://jestjs.io/)\npara tus pruebas unitarias.\n\nPara comenzar este proyecto tendrás que hacer un _fork_ y _clonar_ este\nrepositorio.\n\nAntes de comenzar a codear, es necesario crear un plan de acción. Esto debería\nquedar detallado en el `README.md` de tu repo y en una serie de _issues_\ny _milestones_ para priorizar y organizar el trabajo, y para poder hacer\nseguimiento de tu progreso.\n\nDentro de cada _milestone_ se crearán y asignarán los _issues_ que cada quien\nconsidere necesarios.\n\nTambién te sugerimos que empieces a utilizar los [project boards](https://help.github.com/en/articles/about-project-boards) de github que te\nayudaran a organizar y priorizar su trabajo.\n\n### Archivos del proyecto\n\n- `README.md` con descripción del módulo, instrucciones de instalación/uso,\n  documentación del API y ejemplos. Todo lo relevante para que cualquier\n  developer que quiera usar tu librería pueda hacerlo sin inconvenientes.\n- `index.js`: Desde este archivo debes exportar una función (`mdLinks`).\n- `package.json` con nombre, versión, descripción, autores, licencia,\n  dependencias, scripts (pretest, test, ...)\n- `.editorconfig` con configuración para editores de texto.\n- `.eslintrc` con configuración para linter.\n- `.gitignore` para ignorar `node_modules` u otras carpetas que no deban\n  incluirse en control de versiones (`git`).\n- `test/md-links.spec.js` debe contener los tests unitarios para la función\n  `mdLinks()`. Tu implementación debe pasar estos test.\n\n### JavaScript API\n\nEl módulo debe poder importarse en otros scripts de Node.js y debe ofrecer la\nsiguiente interfaz:\n\n#### `mdLinks(path, options)`\n\n##### Argumentos\n\n- `path`: Ruta absoluta o relativa al archivo o directorio. Si la ruta pasada es\n  relativa, debe resolverse con respecto al directorio desde donde se invoca\n  node (_current working directory_).\n- `options`: Un objeto con las siguientes propiedades:\n  - `validate`: Booleano que determina si se desea validar los links\n    encontrados.\n\n##### Valor de retorno\n\nLa función debe retornar una promesa (`Promise`) que resuelva a un arreglo\n(`Array`) de objetos (`Object`), donde cada objeto representa un link y contiene\nlas siguientes propiedades:\n\n- `href`: URL encontrada.\n- `text`: Texto que aparecía dentro del link (`<a>`).\n- `file`: Ruta del archivo donde se encontró el link.\n\n#### Ejemplo\n\n```js\nconst mdLinks = require("md-links");\n\n// Caso 1 .- Ruta relativa sin options\nmdLinks("./some/example.md")\n  .then(links => {\n    // => [{ href, text, file }]\n  })\n  .catch(console.error);\n\n// Caso  .- Ruta relativa con option (validate)\nmdLinks("./some/example.md", { validate: true })\n  .then(links => {\n    // => [{ href, text, file, status, ok }]\n  })\n  .catch(console.error);\n\n// Caso 3 .- Ruta relativa de un directorio sin options\nmdLinks("./some/dir")\n  .then(links => {\n    // => [{ href, text, file }]\n  })\n  .catch(console.error);\n\n//PD: Pueden presentarse más casos.\n```\n\n### CLI (Command Line Interface - Interfaz de Línea de Comando)\n\nEl ejecutable de nuestra aplicación debe poder ejecutarse de la siguiente\nmanera a través de la terminal:\n\n`md-links <path-to-file> [options]`\n\nPor ejemplo:\n\n```sh\n$ md-links ./some/example.md\n./some/example.md http://algo.com/2/3/ Link a algo\n./some/example.md https://otra-cosa.net/algun-doc.html algún doc\n./some/example.md http://google.com/ Google\n```\n\nEl comportamiento por defecto no debe validar si las URLs responden ok o no,\nsolo debe identificar el archivo markdown (a partir de la ruta que recibe como\nargumento), analizar el archivo Markdown e imprimir los links que vaya\nencontrando, junto con la ruta del archivo donde aparece y el texto\nque hay dentro del link (truncado a 50 caracteres).\n\n#### Options\n\n##### `--validate`\n\nSi pasamos la opción `--validate`, el módulo debe hacer una petición HTTP para\naveriguar si el link funciona o no. Si el link resulta en una redirección a una\nURL que responde ok, entonces consideraremos el link como ok.\n\nPor ejemplo:\n\n```sh\n$ md-links ./some/example.md --validate\n./some/example.md http://algo.com/2/3/ ok 200 Link a algo\n./some/example.md https://otra-cosa.net/algun-doc.html fail 404 algún doc\n./some/example.md http://google.com/ ok 301 Google\n```\n\nVemos que el _output_ en este caso incluye la palabra `ok` o `fail` después de\nla URL, así como el status de la respuesta recibida a la petición HTTP a dicha\nURL.\n\n##### `--stats`\n\nSi pasamos la opción `--stats` el output (salida) será un texto con estadísticas\nbásicas sobre los links.\n\n```sh\n$ md-links ./some/example.md --stats\nTotal: 3\nUnique: 3\n```\n\nTambién podemos combinar `--stats` y `--validate` para obtener estadísticas que\nnecesiten de los resultados de la validación.\n\n```sh\n$ md-links ./some/example.md --stats --validate\nTotal: 3\nUnique: 3\nBroken: 1\n```\n\n## Entregables\n\nMódulo instalable via `npm install <github-user>/md-links`. Este módulo debe\nincluir tanto un ejecutable como una interfaz que podamos importar con `require`\npara usarlo programáticamente.\n\n## Hacker edition\n\n- Puedes agregar la propiedad `line` a cada objeto `link` indicando en qué línea\n  del archivo se encontró el link.\n- Puedes agregar más estadísticas.\n- Integración continua con Travis o Circle CI.\n\n## Pistas / Tips\n\n### FAQs\n\n#### ¿Cómo hago para que mi módulo sea _instalable_ desde GitHub?\n\nPara que el módulo sea instalable desde GitHub solo tiene que:\n\n- Estar en un repo público de GitHub\n- Contener un `package.json` válido\n\nCon el comando `npm install githubname/reponame` podemos instalar directamente\ndesde GitHub. Ver [docs oficiales de `npm install` acá](https://docs.npmjs.com/cli/install).\n\nPor ejemplo, el [`course-parser`](https://github.com/Laboratoria/course-parser)\nque usamos para la currícula no está publicado en el registro público de NPM,\nasí que lo instalamos directamente desde GitHub con el comando `npm install Laboratoria/course-parser`.\n\n### Sugerencias de implementación\n\nLa implementación de este proyecto tiene varias partes: leer del sistema de\narchivos, recibir argumentos a través de la línea de comando, analizar texto,\nhacer consultas HTTP, ... y todas estas cosas pueden enfocarse de muchas formas,\ntanto usando librerías como implementando en VanillaJS.\n\nPor poner un ejemplo, el _parseado_ (análisis) del markdown para extraer los\nlinks podría plantearse de las siguientes maneras (todas válidas):\n\n- Usando un _módulo_ como [markdown-it](https://github.com/markdown-it/markdown-it),\n  que nos devuelve un arreglo de _tokens_ que podemos recorrer para identificar\n  los links.\n- Siguiendo otro camino completamente, podríamos usar\n  [expresiones regulares (`RegExp`)](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Regular_Expressions).\n- También podríamos usar una combinación de varios _módulos_ (podría ser válido\n  transformar el markdown a HTML usando algo como [marked](https://github.com/markedjs/marked)\n  y de ahí extraer los link con una librería de DOM como [JSDOM](https://github.com/jsdom/jsdom)\n  o [Cheerio](https://github.com/cheeriojs/cheerio) entre otras).\n- Usando un _custom renderer_ de [marked](https://github.com/markedjs/marked)\n  (`new marked.Renderer()`).\n\nNo dudes en consultar a tus compañeras, coaches y/o el [foro de la comunidad](http://community.laboratoria.la/c/js)\nsi tienes dudas existenciales con respecto a estas decisiones. No existe una\n"única" manera correcta :wink:\n\n### Tutoriales / NodeSchool workshoppers\n\n- [learnyounode](https://github.com/workshopper/learnyounode)\n- [how-to-npm](https://github.com/workshopper/how-to-npm)\n- [promise-it-wont-hurt](https://github.com/stevekane/promise-it-wont-hurt)\n\n### Otros recursos\n\n- [Acerca de Node.js - Documentación oficial](https://nodejs.org/es/about/)\n- [Node.js file system - Documentación oficial](https://nodejs.org/api/fs.html)\n- [Node.js http.get - Documentación oficial](https://nodejs.org/api/http.html#http_http_get_options_callback)\n- [Node.js - Wikipedia](https://es.wikipedia.org/wiki/Node.js)\n- [What exactly is Node.js? - freeCodeCamp](https://medium.freecodecamp.org/what-exactly-is-node-js-ae36e97449f5)\n- [¿Qué es Node.js y para qué sirve? - drauta.com](https://www.drauta.com/que-es-nodejs-y-para-que-sirve)\n- [¿Qué es Nodejs? Javascript en el Servidor - Fazt en YouTube](https://www.youtube.com/watch?v=WgSc1nv_4Gw)\n- [¿Simplemente qué es Node.js? - IBM Developer Works, 2011](https://www.ibm.com/developerworks/ssa/opensource/library/os-nodejs/index.html)\n- [Node.js y npm](https://www.genbeta.com/desarrollo/node-js-y-npm)\n- [Módulos, librerías, paquetes, frameworks... ¿cuál es la diferencia?](http://community.laboratoria.la/t/modulos-librerias-paquetes-frameworks-cual-es-la-diferencia/175)\n- [Asíncronía en js](https://carlosazaustre.com/manejando-la-asincronia-en-javascript/)\n- [NPM](https://docs.npmjs.com/getting-started/what-is-npm)\n- [Publicar packpage](https://docs.npmjs.com/getting-started/publishing-npm-packages)\n- [Crear módulos en Node.js](https://docs.npmjs.com/getting-started/publishing-npm-packages)\n- [Leer un archivo](https://nodejs.org/api/fs.html#fs_fs_readfile_path_options_callback)\n- [Leer un directorio](https://nodejs.org/api/fs.html#fs_fs_readdir_path_options_callback)\n- [Path](https://nodejs.org/api/path.html)\n- [Linea de comando CLI](https://medium.com/netscape/a-guide-to-create-a-nodejs-command-line-package-c2166ad0452e)\n- [Cinthia](https://cinthia-tagle-network.com)\n\n## Checklist\n\n### General\n\n- [ ] Puede instalarse via `npm install --global <github-user>/md-links`\n\n### `README.md`\n\n- [ ] Colocar el pseudo código o diagrama de flujo con el algoritmo que soluciona el problema.\n- [ ] Un board con el backlog para la implementación de la librería.\n- [ ] Documentación técnica de la librería.\n- [ ] Guía de uso e instalación de la librería\n\n### API `mdLinks(path, opts)`\n\n- [ ] El módulo exporta una función con la interfaz (API) esperada.\n- [ ] Implementa soporte para archivo individual\n- [ ] Implementa soporte para directorios\n- [ ] Implementa `options.validate`\n\n### Pruebas / tests\n\n- [ ] Pruebas unitarias cubren un mínimo del 70% de statements, functions,\n      lines, y branches.\n- [ ] Pasa tests (y linters) (`npm test`).\n\n### CLI\n\n- [ ] Expone ejecutable `md-links` en el path (configurado en `package.json`)\n- [ ] Se ejecuta sin errores / output esperado\n- [ ] Implementa `--validate`\n- [ ] Implementa `--stats`\n\n## Hacker Edition\n\n- [ ] Crear un script en el package.json que transforme el codigo ES6+ a ES5.\n- [ ] Puedes agregar la propiedad line a cada objeto link indicando en qué línea del archivo se encontró el link.\n- [ ] Puedes agregar más estadísticas.\n- [ ] Integración continua con Travis o Circle CI.\n',
+18 silly publish   readmeFilename: 'README.md',
+18 silly publish   gitHead: '2be1fbadc02098f5b01231faad0753c3e75754b0',
+18 silly publish   _id: 'md-links@0.1.1',
+18 silly publish   _shasum: '2be248c51c711d8fe5b37b66bc22b223a1d8bca2',
+18 silly publish   _from: '.' }
+19 verbose getPublishConfig undefined
+20 silly mapToRegistry name md-links
+21 silly mapToRegistry using default registry
+22 silly mapToRegistry registry https://registry.npmjs.org/
+23 silly mapToRegistry uri https://registry.npmjs.org/md-links
+24 verbose publish registryBase https://registry.npmjs.org/
+25 silly publish uploading /home/laboratoria-190/.npm/md-links/0.1.1/package.tgz
+26 verbose request uri https://registry.npmjs.org/md-links
+27 verbose request sending authorization for write operation
+28 info attempt registry request try #1 at 16:22:29
+29 verbose request using bearer token for auth
+30 verbose request id fae2174657186271
+31 http request PUT https://registry.npmjs.org/md-links
+32 http 403 https://registry.npmjs.org/md-links
+33 verbose headers { date: 'Fri, 30 Aug 2019 21:22:30 GMT',
+33 verbose headers   'content-type': 'application/json',
+33 verbose headers   'transfer-encoding': 'chunked',
+33 verbose headers   connection: 'keep-alive',
+33 verbose headers   'set-cookie':
+33 verbose headers    [ '__cfduid=dd1b7c20fc6b68691e312bdbc155a26281567200150; expires=Sat, 29-Aug-20 21:22:30 GMT; path=/; domain=.npmjs.org; HttpOnly' ],
+33 verbose headers   'cf-ray': '50e9d20b6c9b9a86-MFE',
+33 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+33 verbose headers   vary: 'Accept-Encoding',
+33 verbose headers   server: 'cloudflare',
+33 verbose headers   'content-encoding': 'gzip' }
+34 verbose request invalidating /home/laboratoria-190/.npm/registry.npmjs.org/md-links on PUT
+35 error publish Failed PUT 403
+36 verbose stack Error: You do not have permission to publish "md-links". Are you logged in as the correct user? : md-links
+36 verbose stack     at makeError (/usr/share/npm/node_modules/npm-registry-client/lib/request.js:264:12)
+36 verbose stack     at CachingRegistryClient.<anonymous> (/usr/share/npm/node_modules/npm-registry-client/lib/request.js:252:14)
+36 verbose stack     at /usr/share/npm/node_modules/npm-registry-client/lib/request.js:178:7
+36 verbose stack     at Gunzip.onEnd (zlib.js:131:5)
+36 verbose stack     at emitNone (events.js:111:20)
+36 verbose stack     at Gunzip.emit (events.js:208:7)
+36 verbose stack     at endReadableNT (_stream_readable.js:1064:12)
+36 verbose stack     at _combinedTickCallback (internal/process/next_tick.js:138:11)
+36 verbose stack     at process._tickCallback (internal/process/next_tick.js:180:9)
+37 verbose statusCode 403
+38 verbose pkgid md-links
+39 verbose cwd /home/laboratoria-190/Escritorio/LaboratoriaW/GDL003-md-links
+40 error Linux 4.15.0-58-generic
+41 error argv "/usr/bin/node" "/usr/bin/npm" "publish"
+42 error node v8.10.0
+43 error npm  v3.5.2
+44 error code E403
+45 error You do not have permission to publish "md-links". Are you logged in as the correct user? : md-links
+46 error If you need help, you may report this error at:
+46 error     <https://github.com/npm/npm/issues>
+47 verbose exit [ 1, true ]

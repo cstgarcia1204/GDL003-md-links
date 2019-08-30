@@ -12,22 +12,23 @@ let inputTesting='./README.md';
 
 //----5 Funcion que validará los links
 const linksValidation =(urlArray)=>{
+  let cont=0;
   urlArray.forEach((element,i) => {
-
+ 
     fetch(urlArray[i])
       .then((response)=>{
-        //if (response.status <200 && response.status >= 300){
-          //console.log(response.statusText);
-        //}else{
-          return console.log
-          ('Respuesta OK: ',response.ok,'| Status: ',response.status,'| StatusText: ', response.statusText,'| ',urlArray[i]);
-        //}
+        cont+=1;
+        return console.log
+        ('Respuesta OK: ',response.ok,'| Status: ',response.status,'| StatusText: ', response.statusText,'| ',urlArray[i]);
+      }).then((response)=>{
+        console.log(cont);
       })
       .catch(function(err) {
         console.log('--->Error, Broken Link!!!', err.message);
         //return console.error(err);
       });
   });
+  console.log(cont);
 }// 5 termina la funcion que valida los links
 
 //----4 Funcion que filtrara los elementos <a> y arrojara los links
